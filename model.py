@@ -1,6 +1,6 @@
 import os
 
-from peewee import Model, CharField, IntegerField, ForeignKeyField, TextField
+from peewee import Model, CharField, IntegerField, ForeignKeyField
 from playhouse.db_url import connect
 from login import login_manager
 from flask_login import UserMixin
