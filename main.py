@@ -61,10 +61,10 @@ def login():
         return redirect(url_for('all_donation'))
     form = LoginForm()
     if form.validate_on_submit():
-        username = Donor.select().where(Donor.username == form.username.data).get()
+        username = Donor.select().where(Donor.username == form.username.data)
         if username and bcrypt.check_password_hash(username.password, form.password.data):
             flash(f'You have been logged in', 'success')
-            login_user(username, remember=form.remember.data)
+            login_user(username.get(), remember=form.remember.data)
             next_page = request.args.get('next')
             return redirect(next_page) if next_page else redirect(url_for('all_donation'))
         else:
@@ -93,4 +93,4 @@ def logout():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port)
