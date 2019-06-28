@@ -11,6 +11,7 @@ class RegistrationForm(FlaskForm):
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
 
+    # validation to check that we dont add same user name to our data base
     def validate_username(self, username):
         user = Donor.select().where(Donor.username == username.data)
         if user:
