@@ -5,8 +5,8 @@ from model import Donor
 
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired(), length(min=2, max=20)])
-    name = StringField('Name', validators=[DataRequired(), length(min=2, max=20)])
+    username = StringField('Username', validators=[DataRequired(), length(min=2, max=40)])
+    name = StringField('Name', validators=[DataRequired(), length(min=2, max=40)])
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
