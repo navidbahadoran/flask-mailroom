@@ -18,9 +18,9 @@ def load_user(user_id):
 
 
 class Donor(Model, UserMixin):
-    username = CharField(max_length=20, unique=True)
-    name = CharField(max_length=20)
-    password = CharField(max_length=20)
+    username = CharField(max_length=255, unique=True)
+    name = CharField(max_length=255)
+    password = CharField(max_length=255)
 
     class Meta:
         database = db
