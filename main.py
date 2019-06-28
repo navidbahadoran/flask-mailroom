@@ -62,7 +62,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         username = Donor.select().where(Donor.username == form.username.data)
-        if username and bcrypt.check_password_hash(username.password, form.password.data):
+        if username and bcrypt.check_password_hash(username.get().password, form.password.data):
             flash(f'You have been logged in', 'success')
             login_user(username.get(), remember=form.remember.data)
             next_page = request.args.get('next')
