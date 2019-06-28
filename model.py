@@ -1,6 +1,6 @@
 import os
 
-from peewee import Model, CharField, IntegerField, ForeignKeyField
+from peewee import Model, CharField, IntegerField, ForeignKeyField, TextField
 from playhouse.db_url import connect
 from login import login_manager
 from flask_login import UserMixin
@@ -18,8 +18,8 @@ def load_user(user_id):
 
 
 class Donor(Model, UserMixin):
-    username = CharField(max_length=255, unique=True)
-    name = CharField(max_length=255)
+    username = CharField(unique=True)
+    name = CharField()
     password = CharField(max_length=255)
 
     class Meta:
