@@ -8,7 +8,7 @@ Running at http://flask-mailroom-navid.herokuapp.com
 
 What I did:
 
-1. Add a page with a form for Login form:
+1. Add a page with a form for Login form.
 
 2. Add navigation elements in `base.jinja2` to the top of both pages. 
 
@@ -21,6 +21,14 @@ What I did:
 6. Publish my work to Heroku. 
 
 7. For all forms I used falsk form to create them which is more powerful than html form.
+
+8. Add logout
+
+9. When user logged in the signup form should not be shown
+
+10. The create form to add donation just show up when the user logged in
+
+11. Logged in user's username has been shwoing up in the up right corner
 
 The application is running on port 5000. open your browser and then open your browser to (http://localhost:5000)
 
@@ -38,8 +46,8 @@ $ heroku open
 
 what else need to do:
 
-1- Add logout form
-2- When user logged in the signup form should not be shown
-3- The name of logged in user should be shown in the right left of all pages.
+1- Add forget password form
+2- If password is forgotten, reset a pass word.
+
 
 
