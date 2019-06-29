@@ -38,6 +38,11 @@ All commands to be run from inside the repository directory.
 ```
 $ git init                # Only necessary if this is not already a git repository
 $ heroku create
+$ heroku config:set SECRET_KEY=KjJPe35tQKY2YLRzm7vhm3aJdqqh8YHR(This Key is sample key, you can make any key that you want and use it in your machine and heroku environemtn)
+$ pip install gunicorn psycopg2-binary(make sure that these two modules has been installed)
+$ pip freeze > requirements.txt(make sure that you make a list of your installed packages in requirements.txt")
+$ echo "web: gunicorn main:app" > Procfile  (You need to create Procfile in your text editor and just add a single line: "web: gunicorn main:app")
+$ git add .; git commit -a -m "Initial commit"          ## Only necessary because this is a new git repo. # If you have any changes or files to add, commit them before you push.
 $ git push heroku master  # If you have any changes or files to add, commit them before you push. 
 $ heroku addons:create heroku-postgresql:hobby-dev
 $ heroku run python setup.py
